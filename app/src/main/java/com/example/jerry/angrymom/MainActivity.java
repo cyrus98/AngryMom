@@ -25,8 +25,9 @@ public class MainActivity extends ActionBarActivity {
     //컨트롤을 초기화 한다..
     private void InitializeControl() {
         dateTextControl = (TextView)findViewById(R.id.dateText);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE, MMM dd");
         dateTextControl.setText(dateFormat.format(new Date()));
+
     }
 
     @Override
