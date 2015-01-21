@@ -4,16 +4,30 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import java.util.*;
+import java.text.*;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    TextView dateTextControl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.InitializeControl();
     }
 
+    //컨트롤을 초기화 한다.
+    private void InitializeControl() {
+        dateTextControl = (TextView)findViewById(R.id.dateText);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        dateTextControl.setText(dateFormat.format(new Date()));
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
