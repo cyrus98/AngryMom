@@ -22,7 +22,7 @@ public class MainActivity extends ActionBarActivity {
         this.InitializeControl();
     }
 
-    //컨트롤을 초기화 한다.
+    //컨트롤을 초기화 한다..
     private void InitializeControl() {
         dateTextControl = (TextView)findViewById(R.id.dateText);
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
