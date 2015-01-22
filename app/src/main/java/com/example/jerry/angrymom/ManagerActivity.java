@@ -4,14 +4,25 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class ManagerActivity extends Activity {
+
+    TextView dateTextControl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager);
+
+        this.InitializeControl();
+    }
+
+    //컨트롤을 초기화 한다..
+    private void InitializeControl() {
+        dateTextControl = (TextView)findViewById(R.id.dateText);
+        dateTextControl.setText(Common.GetDateTitle());
     }
 
 
@@ -19,7 +30,7 @@ public class ManagerActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_manager, menu);
-        return true;
+        return false;
     }
 
     @Override

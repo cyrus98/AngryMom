@@ -1,7 +1,6 @@
 package com.example.jerry.angrymom;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.jerry.angrymom.Common;
 
 import java.util.*;
 import java.text.*;
@@ -42,9 +43,7 @@ public class MainActivity extends Activity {
     //컨트롤을 초기화 한다..
     private void InitializeControl() {
         dateTextControl = (TextView)findViewById(R.id.dateText);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE, MMM dd");
-        dateTextControl.setText(dateFormat.format(new Date()));
-
+        dateTextControl.setText(Common.GetDateTitle());
     }
 
 
