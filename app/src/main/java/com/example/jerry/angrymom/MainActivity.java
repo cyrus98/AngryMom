@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.jerry.angrymom.Common;
@@ -25,6 +27,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // 텍스트 박스 설정
         todoText = (EditText)findViewById(R.id.textToDo);
         todoText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +38,20 @@ public class MainActivity extends Activity {
                     startActivity((managerTodo));
             }
         });
+
+        // 리스트 아답터 설정
+        ArrayList<TodoEntity> list = new ArrayList<TodoEntity>();
+
+        // DB하고 연동해야 할 부분
+        TodoEntity todo1 = new TodoEntity("테스트1");
+        TodoEntity todo2 = new TodoEntity("테스트2");
+        list.add(todo1);
+        list.add(todo2);
+
+        TodoListAdapter todoAdapter = new TodoListAdapter(this, R.layout.row, list);
+
+        ListView listView = (ListView)findViewById(R.id.listTodo);
+        listView.setAdapter(todoAdapter);
 
         this.InitializeControl();
 

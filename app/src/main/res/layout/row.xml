@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp">
+    
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rowCheckBox"
+        android:layout_alignParentLeft="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/rowCheckBox"
+        android:layout_alignBottom="@+id/rowCheckBox"
+        android:layout_toRightOf="@+id/rowCheckBox"
+        android:textSize="20dp"
+        android:id="@+id/rowtitle"
+        android:gravity="center_vertical"
+        android:text="todo list....."/>
+</RelativeLayout>
