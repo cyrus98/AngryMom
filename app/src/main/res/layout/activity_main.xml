@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="10"
+            android:layout_weight="1"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -57,25 +57,29 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="5">
+            android:layout_weight="1"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
 
             <EditText
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textToDo"
-                android:layout_weight="1"
+                android:layout_weight="10"
+                android:focusable="false"
                 android:text="Add a new task"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="85">
-            <TextView
+            android:layout_weight="80">
+            <ListView
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center_horizontal"
-                android:text="Bottom"/>
+                android:layout_height="wrap_content"
+                android:id="@+id/listTodo">
+
+            </ListView>
         </LinearLayout>
 
     </LinearLayout>
