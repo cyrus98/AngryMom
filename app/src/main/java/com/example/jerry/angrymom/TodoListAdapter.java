@@ -47,13 +47,13 @@ public class TodoListAdapter extends ArrayAdapter<TodoEntity> {
                     }
                 });
 
-                titleTextView.setOnLongClickListener(new View.OnLongClickListener() {
+                /*titleTextView.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View v) {
                         Toast.makeText(context, "long click test", Toast.LENGTH_LONG).show();
                         return false;
                     }
-                });
+                });*/
             }
 
 

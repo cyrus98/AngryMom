@@ -10,6 +10,9 @@ public class TodoEntity {
 
     private String Title;
     private Date RegisterDate;
+    private Date TargetDate;
+
+    public enum State {Appointment, Completed, Cancel}
 
     public TodoEntity(String title){
         this.Title = title;
@@ -23,5 +26,13 @@ public class TodoEntity {
     public String getRegisterDate() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         return dateFormat.format(dateFormat);
+    }
+
+    public Date getTargetDate() {
+        return TargetDate;
+    }
+
+    public void setTargetDate(Date targetDate) {
+        TargetDate = targetDate;
     }
 }
