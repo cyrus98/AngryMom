@@ -55,6 +55,7 @@ public class ManagerActivity extends Activity {
 
     }
 
+
     private Boolean AddTodo(){
         Boolean result = false;
         String Title = this.todoText.getText().toString();
