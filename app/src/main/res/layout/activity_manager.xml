@@ -64,10 +64,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Add a new task"/>
+                android:id="@+id/textToDoManager"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/btnOK"
                 android:text="OK"/>
         </LinearLayout>
 

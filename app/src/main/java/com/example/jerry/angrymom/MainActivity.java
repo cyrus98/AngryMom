@@ -39,15 +39,10 @@ public class MainActivity extends Activity {
             }
         });
 
+        final DBHelper dbHelper = Common.GetDBHelper(getApplicationContext()); //new DBHelper(getApplicationContext(), "Todo.db", null, 2);
+
         // 리스트 아답터 설정
-        ArrayList<TodoEntity> list = new ArrayList<TodoEntity>();
-
-        // DB하고 연동해야 할 부분
-        TodoEntity todo1 = new TodoEntity("테스트1");
-        TodoEntity todo2 = new TodoEntity("테스트2");
-        list.add(todo1);
-        list.add(todo2);
-
+        ArrayList<TodoEntity> list = dbHelper.GetTodoList();
         TodoListAdapter todoAdapter = new TodoListAdapter(this, R.layout.row, list);
 
         ListView listView = (ListView)findViewById(R.id.listTodo);

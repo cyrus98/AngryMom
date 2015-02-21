@@ -1,20 +1,29 @@
 package com.example.jerry.angrymom;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class ManagerActivity extends Activity {
 
     TextView dateTextControl;
+    EditText todoText;
+    Button btnOK;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager);
+
+
 
         this.InitializeControl();
     }
@@ -23,8 +32,42 @@ public class ManagerActivity extends Activity {
     private void InitializeControl() {
         dateTextControl = (TextView)findViewById(R.id.dateText);
         dateTextControl.setText(Common.GetDateTitle());
+
+        todoText = (EditText)findViewById(R.id.textToDoManager);
+
+        btnOK = (Button)findViewById(R.id.btnOK);
+        btnOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Boolean result = false;
+
+                result = AddTodo();
+
+                if(result){
+                    Intent intent = new Intent(getBaseContext(), MainActivity.class);
+
+                    if(intent != null)
+                        startActivity((intent));
+                }
+
+            }
+        });
+
     }
 
+    private Boolean AddTodo(){
+        Boolean result = false;
+        String Title = this.todoText.getText().toString();
+        if(Title.trim().length() > 0) {
+            TodoEntity addTodo = new TodoEntity(Title);
+
+            DBHelper db = Common.GetDBHelper(getApplicationContext());
+            result = db.AddTodo(addTodo);
+        } else {
+            Toast.makeText(getApplicationContext(), "할일을 적으라우!", Toast.LENGTH_LONG).show();
+        }
+        return result;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
